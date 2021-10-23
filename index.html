@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Addition</title>
+ 
+</head>
+<body>
+    <div class="header">
+        <h1 style="margin-left: 290px ;">Matrix Addition</h1>
+    </div>
+    <div class="container">
+        <div style="margin-left: 300px;" class="section-1">
+            <div class="main matrix1">
+                <input style=" width: 5%;" type="number"  id="a11">
+                <input style=" width: 5%;" type="number"  id="a12">
+                <input style=" width: 5%;" type="number"  id="a13"><br>
+                <input style=" width: 5%;" type="number"  id="a21">
+                <input style=" width: 5%;" type="number"  id="a22">
+                <input style=" width: 5%;" type="number"  id="a23"><br>
+                <input style=" width: 5%;" type="number"  id="a31">
+                <input style=" width: 5%;" type="number"  id="a32">
+                <input style=" width: 5%;" type="number"  id="a33">
+                
+            </div>
+        </div>
+        <h1 style="margin-left: 385px;">+</h1>
+        <div style="margin-left: 300px;" class="section-2">
+            <div class="main matrix 2">
+                <input style=" width: 5%;" type="number"  id="b11">
+                <input style=" width: 5%;" type="number"  id="b12">
+                <input style=" width: 5%;" type="number"  id="b13"><br>
+                <input style=" width: 5%;" type="number"  id="b21">
+                <input style=" width: 5%;" type="number"  id="b22">
+                <input style=" width: 5%;" type="number"  id="b23"><br>
+                <input style=" width: 5%;" type="number"  id="b31">
+                <input style=" width: 5%;" type="number"  id="b32">
+                <input style=" width: 5%;" type="number"  id="b33">
+                
+            </div>
+        </div>
+       
+        <div class="result">
+            <div class="addBtn">
+              <button
+                style="
+                  width: 5%;
+                  height: 30px;
+                  font-size: 10px;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  margin-left: 360px;
+                "
+                onclick="Sum()"
+              >
+                ADD
+              </button>
+        <div style="margin-left: 300px;" class="section-3">
+            <div class="main matrix 3">
+                <input style=" width: 5%;" type="number"  id="c11">
+                <input style=" width: 5%;" type="number"  id="c12">
+                <input style=" width: 5%;" type="number"  id="c13"><br>
+                <input style=" width: 5%;" type="number"  id="c21">
+                <input style=" width: 5%;" type="number"  id="c22">
+                <input style=" width: 5%;" type="number"  id="c23"><br>
+                <input style=" width: 5%;" type="number"  id="c31">
+                <input style=" width: 5%;" type="number"  id="c32">
+                <input style=" width: 5%;" type="number"  id="c33">
+                
+            </div>
+        </div>
+
+      
+    </div>
+   
+</body>
+</html>
+<script>
+    const Sum = () => {
+    let a11 = Number(document.getElementById("a11").value);
+    let a12 = Number(document.getElementById("a12").value);
+    let a13 = Number(document.getElementById("a13").value);
+    let a21 = Number(document.getElementById("a21").value);
+    let a22 = Number(document.getElementById("a22").value);
+    let a23 = Number(document.getElementById("a23").value);
+    let a31 = Number(document.getElementById("a31").value);
+    let a32 = Number(document.getElementById("a32").value);
+    let a33 = Number(document.getElementById("a33").value);
+  
+    let b11 = Number(document.getElementById("b11").value);
+    let b12 = Number(document.getElementById("b12").value);
+    let b13 = Number(document.getElementById("b13").value);
+    let b21 = Number(document.getElementById("b21").value);
+    let b22 = Number(document.getElementById("b22").value);
+    let b23 = Number(document.getElementById("b23").value);
+    let b31 = Number(document.getElementById("b31").value);
+    let b32 = Number(document.getElementById("b32").value);
+    let b33 = Number(document.getElementById("b33").value);
+  
+    let a = [
+      [a11, a12, a13],
+      [a21, a22, a23],
+      [a31, a32, a33],
+    ];
+  
+    let b = [
+      [b11, b12, b13],
+      [b21, b22, b23],
+      [b31, b32, b33],
+    ];
+    let c = [[], [], []];
+  
+    for (let i = 0; i < a.length; i++) {
+      for (let j = 0; j < b.length; j++) {
+        c[i][j] = a[i][j] + b[i][j];
+      }
+    }
+  
+    for (let i = 0; i < a.length; i++) {
+      for (let j = 0; j < b.length; j++) {
+        document.getElementById(`c${i + 1}${j + 1}`).value = c[i][j];
+      }
+    }
+  };
+</script>
